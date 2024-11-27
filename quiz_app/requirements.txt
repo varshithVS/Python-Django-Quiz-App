@@ -1,0 +1,12 @@
+
+### Additional Notes:
+
+1. **Python Installation**: If the user doesn't have Python installed, direct them to [Download Python](https://www.python.org/downloads/) and guide them through installation.
+2. **Virtual Environment**: It's important to use a virtual environment to manage project dependencies and avoid conflicts with other Python projects.
+3. **Running the Development Server**: Users should access the app by navigating to `http://127.0.0.1:8000/` in their browser.
+
+---
+
+### `requirements.txt`
+
+Django==5.1.3

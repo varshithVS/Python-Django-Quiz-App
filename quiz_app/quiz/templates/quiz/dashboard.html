@@ -1,0 +1,28 @@
+<!-- quiz/templates/quiz/dashboard.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Dashboard</h1>
+        <p>Total Questions Attempted: {{ user_stats.attempted }}</p>
+        <p>Correct Answers: {{ user_stats.correct }}</p>
+        <p class="score"> Score: 
+            {% if user_stats.attempted != 0 %}
+                {{ user_stats.correct }} / {{ user_stats.attempted }} 
+                ({{ percentage|floatformat:2 }}%)
+            {% else %}
+                0% (No questions attempted yet)
+            {% endif %}
+        </p>
+        <a href="{% url 'quiz' %}">Take Quiz</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!-- quiz/templates/quiz/result.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+    <div class="result-container">
+        <h1>Result</h1>
+
+        {% if correct %}
+            <p class="correct">Correct Answer!</p>
+        {% else %}
+            <p class="incorrect">Incorrect Answer!</p>
+            <p>The correct answer was: {{ correct_option_text }}</p>
+        {% endif %}
+
+        <p>Your Answer: {{ user_answer_text }}</p>
+
+        <!-- Provide two options for the user -->
+        <a href="{% url 'quiz' %}">Answer More</a> | 
+        <a href="{% url 'dashboard' %}">End Quiz</a>
+    </div>
+
+</body>
+</html>
